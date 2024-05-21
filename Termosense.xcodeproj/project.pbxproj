@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59F6A4482BF4878200442D17 /* TermosenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A4472BF4878200442D17 /* TermosenseApp.swift */; };
+		59F6A44C2BF4878300442D17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F6A44B2BF4878300442D17 /* Assets.xcassets */; };
+		59F6A44F2BF4878300442D17 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F6A44E2BF4878300442D17 /* Preview Assets.xcassets */; };
+		59F6A4592BF4878300442D17 /* TermosenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A4582BF4878300442D17 /* TermosenseTests.swift */; };
+		59F6A4632BF4878300442D17 /* TermosenseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A4622BF4878300442D17 /* TermosenseUITests.swift */; };
+		59F6A4652BF4878300442D17 /* TermosenseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A4642BF4878300442D17 /* TermosenseUITestsLaunchTests.swift */; };
+		59F6A4762BF48A3A00442D17 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A4752BF48A3A00442D17 /* WelcomeView.swift */; };
+		59F6A4782BF48A4600442D17 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A4772BF48A4600442D17 /* LoginView.swift */; };
+		59F6A47A2BF48A4E00442D17 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A4792BF48A4E00442D17 /* RegisterView.swift */; };
+		59F6A47C2BF48A5C00442D17 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A47B2BF48A5C00442D17 /* HomeView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59F6A4552BF4878300442D17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59F6A43C2BF4878200442D17 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59F6A4432BF4878200442D17;
+			remoteInfo = Termosense;
+		};
+		59F6A45F2BF4878300442D17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59F6A43C2BF4878200442D17 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59F6A4432BF4878200442D17;
+			remoteInfo = Termosense;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		59F6A4442BF4878200442D17 /* Termosense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termosense.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59F6A4472BF4878200442D17 /* TermosenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermosenseApp.swift; sourceTree = "<group>"; };
+		59F6A44B2BF4878300442D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		59F6A44E2BF4878300442D17 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		59F6A4542BF4878300442D17 /* TermosenseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TermosenseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59F6A4582BF4878300442D17 /* TermosenseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermosenseTests.swift; sourceTree = "<group>"; };
+		59F6A45E2BF4878300442D17 /* TermosenseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TermosenseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59F6A4622BF4878300442D17 /* TermosenseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermosenseUITests.swift; sourceTree = "<group>"; };
+		59F6A4642BF4878300442D17 /* TermosenseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermosenseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		59F6A4752BF48A3A00442D17 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		59F6A4772BF48A4600442D17 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		59F6A4792BF48A4E00442D17 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		59F6A47B2BF48A5C00442D17 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		59F6A4412BF4878200442D17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F6A4512BF4878300442D17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F6A45B2BF4878300442D17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59F6A43B2BF4878200442D17 = {
+			isa = PBXGroup;
+			children = (
+				59F6A4462BF4878200442D17 /* Termosense */,
+				59F6A4572BF4878300442D17 /* TermosenseTests */,
+				59F6A4612BF4878300442D17 /* TermosenseUITests */,
+				59F6A4452BF4878200442D17 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		59F6A4452BF4878200442D17 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59F6A4442BF4878200442D17 /* Termosense.app */,
+				59F6A4542BF4878300442D17 /* TermosenseTests.xctest */,
+				59F6A45E2BF4878300442D17 /* TermosenseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59F6A4462BF4878200442D17 /* Termosense */ = {
+			isa = PBXGroup;
+			children = (
+				59F6A4472BF4878200442D17 /* TermosenseApp.swift */,
+				59F6A4742BF48A1900442D17 /* Resources */,
+				59F6A4732BF48A1400442D17 /* ViewModel */,
+				59F6A4722BF48A1000442D17 /* View */,
+				59F6A4712BF48A0C00442D17 /* Model */,
+				59F6A44D2BF4878300442D17 /* Preview Content */,
+			);
+			path = Termosense;
+			sourceTree = "<group>";
+		};
+		59F6A44D2BF4878300442D17 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				59F6A44E2BF4878300442D17 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		59F6A4572BF4878300442D17 /* TermosenseTests */ = {
+			isa = PBXGroup;
+			children = (
+				59F6A4582BF4878300442D17 /* TermosenseTests.swift */,
+			);
+			path = TermosenseTests;
+			sourceTree = "<group>";
+		};
+		59F6A4612BF4878300442D17 /* TermosenseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				59F6A4622BF4878300442D17 /* TermosenseUITests.swift */,
+				59F6A4642BF4878300442D17 /* TermosenseUITestsLaunchTests.swift */,
+			);
+			path = TermosenseUITests;
+			sourceTree = "<group>";
+		};
+		59F6A4712BF48A0C00442D17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		59F6A4722BF48A1000442D17 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				59F6A4752BF48A3A00442D17 /* WelcomeView.swift */,
+				59F6A4772BF48A4600442D17 /* LoginView.swift */,
+				59F6A4792BF48A4E00442D17 /* RegisterView.swift */,
+				59F6A47B2BF48A5C00442D17 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		59F6A4732BF48A1400442D17 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		59F6A4742BF48A1900442D17 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				59F6A44B2BF4878300442D17 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		59F6A4432BF4878200442D17 /* Termosense */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59F6A4682BF4878300442D17 /* Build configuration list for PBXNativeTarget "Termosense" */;
+			buildPhases = (
+				59F6A4402BF4878200442D17 /* Sources */,
+				59F6A4412BF4878200442D17 /* Frameworks */,
+				59F6A4422BF4878200442D17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Termosense;
+			productName = Termosense;
+			productReference = 59F6A4442BF4878200442D17 /* Termosense.app */;
+			productType = "com.apple.product-type.application";
+		};
+		59F6A4532BF4878300442D17 /* TermosenseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59F6A46B2BF4878300442D17 /* Build configuration list for PBXNativeTarget "TermosenseTests" */;
+			buildPhases = (
+				59F6A4502BF4878300442D17 /* Sources */,
+				59F6A4512BF4878300442D17 /* Frameworks */,
+				59F6A4522BF4878300442D17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59F6A4562BF4878300442D17 /* PBXTargetDependency */,
+			);
+			name = TermosenseTests;
+			productName = TermosenseTests;
+			productReference = 59F6A4542BF4878300442D17 /* TermosenseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		59F6A45D2BF4878300442D17 /* TermosenseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59F6A46E2BF4878300442D17 /* Build configuration list for PBXNativeTarget "TermosenseUITests" */;
+			buildPhases = (
+				59F6A45A2BF4878300442D17 /* Sources */,
+				59F6A45B2BF4878300442D17 /* Frameworks */,
+				59F6A45C2BF4878300442D17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59F6A4602BF4878300442D17 /* PBXTargetDependency */,
+			);
+			name = TermosenseUITests;
+			productName = TermosenseUITests;
+			productReference = 59F6A45E2BF4878300442D17 /* TermosenseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		59F6A43C2BF4878200442D17 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					59F6A4432BF4878200442D17 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					59F6A4532BF4878300442D17 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 59F6A4432BF4878200442D17;
+					};
+					59F6A45D2BF4878300442D17 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 59F6A4432BF4878200442D17;
+					};
+				};
+			};
+			buildConfigurationList = 59F6A43F2BF4878200442D17 /* Build configuration list for PBXProject "Termosense" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 59F6A43B2BF4878200442D17;
+			productRefGroup = 59F6A4452BF4878200442D17 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				59F6A4432BF4878200442D17 /* Termosense */,
+				59F6A4532BF4878300442D17 /* TermosenseTests */,
+				59F6A45D2BF4878300442D17 /* TermosenseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		59F6A4422BF4878200442D17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59F6A44F2BF4878300442D17 /* Preview Assets.xcassets in Resources */,
+				59F6A44C2BF4878300442D17 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F6A4522BF4878300442D17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F6A45C2BF4878300442D17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59F6A4402BF4878200442D17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59F6A4782BF48A4600442D17 /* LoginView.swift in Sources */,
+				59F6A47A2BF48A4E00442D17 /* RegisterView.swift in Sources */,
+				59F6A4482BF4878200442D17 /* TermosenseApp.swift in Sources */,
+				59F6A47C2BF48A5C00442D17 /* HomeView.swift in Sources */,
+				59F6A4762BF48A3A00442D17 /* WelcomeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F6A4502BF4878300442D17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59F6A4592BF4878300442D17 /* TermosenseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F6A45A2BF4878300442D17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59F6A4632BF4878300442D17 /* TermosenseUITests.swift in Sources */,
+				59F6A4652BF4878300442D17 /* TermosenseUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59F6A4562BF4878300442D17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59F6A4432BF4878200442D17 /* Termosense */;
+			targetProxy = 59F6A4552BF4878300442D17 /* PBXContainerItemProxy */;
+		};
+		59F6A4602BF4878300442D17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59F6A4432BF4878200442D17 /* Termosense */;
+			targetProxy = 59F6A45F2BF4878300442D17 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		59F6A4662BF4878300442D17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		59F6A4672BF4878300442D17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		59F6A4692BF4878300442D17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Termosense/Preview Content\"";
+				DEVELOPMENT_TEAM = Z36G4RL54Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yektaokdan.Termosense;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		59F6A46A2BF4878300442D17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Termosense/Preview Content\"";
+				DEVELOPMENT_TEAM = Z36G4RL54Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yektaokdan.Termosense;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		59F6A46C2BF4878300442D17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z36G4RL54Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yektaokdan.TermosenseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Termosense.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Termosense";
+			};
+			name = Debug;
+		};
+		59F6A46D2BF4878300442D17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z36G4RL54Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yektaokdan.TermosenseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Termosense.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Termosense";
+			};
+			name = Release;
+		};
+		59F6A46F2BF4878300442D17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z36G4RL54Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yektaokdan.TermosenseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Termosense;
+			};
+			name = Debug;
+		};
+		59F6A4702BF4878300442D17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z36G4RL54Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yektaokdan.TermosenseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Termosense;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59F6A43F2BF4878200442D17 /* Build configuration list for PBXProject "Termosense" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F6A4662BF4878300442D17 /* Debug */,
+				59F6A4672BF4878300442D17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59F6A4682BF4878300442D17 /* Build configuration list for PBXNativeTarget "Termosense" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F6A4692BF4878300442D17 /* Debug */,
+				59F6A46A2BF4878300442D17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59F6A46B2BF4878300442D17 /* Build configuration list for PBXNativeTarget "TermosenseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F6A46C2BF4878300442D17 /* Debug */,
+				59F6A46D2BF4878300442D17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59F6A46E2BF4878300442D17 /* Build configuration list for PBXNativeTarget "TermosenseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F6A46F2BF4878300442D17 /* Debug */,
+				59F6A4702BF4878300442D17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 59F6A43C2BF4878200442D17 /* Project object */;
+}
