@@ -2,8 +2,9 @@ import Foundation
 import Combine
 
 class UserDevicesViewModel: ObservableObject {
-    @Published var userDevices: [Device] = []
     @Published var errorMessage: ErrorMessage?
+    @Published var devices: [Device] = []
+    @Published var noDevices: Bool = false
 
     func fetchUserDevices(token: String) {
         guard let url = URL(string: "http://154.53.180.108:8080/api/userdevices") else { return }
@@ -25,11 +26,23 @@ class UserDevicesViewModel: ObservableObject {
             
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
                 if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                   let devicesDict = json["devices"] as? [String: String] {
-                    DispatchQueue.main.async {
-                        self.userDevices = devicesDict.map { Device(name: $0.key, mac: $0.value) }
-                        print("User Devices: \(self.userDevices)")
+                   let status = json["status"] as? String {
+                    if status == "true", let devicesDict = json["devices"] as? [String: String] {
+                        DispatchQueue.main.async {
+                            self.devices = devicesDict.map { Device(name: $0.key, mac: $0.value) }
+                            self.noDevices = false
+                            print("User Devices: \(self.devices)")
+                        }
+                    } else if status == "false" {
+                        DispatchQueue.main.async {
+                            self.noDevices = true
+                            print("No devices found for the user")
+                        }
                     }
+                }
+                // Response'u konsola yazdırma
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("Response: \(responseString)")
                 }
             } else {
                 DispatchQueue.main.async {
@@ -45,5 +58,4 @@ struct Device: Identifiable {
     let name: String
     let mac: String
 }
-
 

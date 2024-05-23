@@ -4,6 +4,7 @@ import Combine
 class AddDeviceViewModel: ObservableObject {
     @Published var errorMessage: ErrorMessage?
     @Published var isDeviceAdded: Bool = false
+    var onDeviceAdded: (() -> Void)?
 
     func addDevice(token: String, deviceName: String, deviceMac: String) {
         guard let url = URL(string: "http://154.53.180.108:8080/api/addDevice") else { return }
@@ -26,6 +27,7 @@ class AddDeviceViewModel: ObservableObject {
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
                 DispatchQueue.main.async {
                     self.isDeviceAdded = true
+                    self.onDeviceAdded?()
                     print("Device added successfully")
                 }
             } else {

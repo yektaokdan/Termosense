@@ -10,6 +10,12 @@ struct WelcomeView: View {
                 VStack {
                     Spacer() // Yukarıda boşluk bırakmak için Spacer ekliyoruz
 
+                    Image("maviLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 33.5) // İsteğe bağlı olarak görüntü yüksekliğini ayarlayabilirsiniz
+                        .padding(.bottom, 10)
+                    Spacer()
                     Image("termosense")
                         .resizable()
                         .scaledToFit()
