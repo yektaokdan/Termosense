@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		591E255D2BFF12B800375B33 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591E255C2BFF12B800375B33 /* LoginViewModel.swift */; };
+		591E25602BFF183300375B33 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591E255F2BFF183300375B33 /* RegisterViewModel.swift */; };
+		591E25622BFF1B6500375B33 /* AddDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591E25612BFF1B6500375B33 /* AddDeviceView.swift */; };
+		591E25642BFF2D3800375B33 /* AddDeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591E25632BFF2D3800375B33 /* AddDeviceViewModel.swift */; };
+		591E25662BFF31ED00375B33 /* UserDevicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591E25652BFF31ED00375B33 /* UserDevicesViewModel.swift */; };
 		59F6A4482BF4878200442D17 /* TermosenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A4472BF4878200442D17 /* TermosenseApp.swift */; };
 		59F6A44C2BF4878300442D17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F6A44B2BF4878300442D17 /* Assets.xcassets */; };
 		59F6A44F2BF4878300442D17 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F6A44E2BF4878300442D17 /* Preview Assets.xcassets */; };
@@ -37,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		591E255C2BFF12B800375B33 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		591E255E2BFF136800375B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		591E255F2BFF183300375B33 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		591E25612BFF1B6500375B33 /* AddDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceView.swift; sourceTree = "<group>"; };
+		591E25632BFF2D3800375B33 /* AddDeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceViewModel.swift; sourceTree = "<group>"; };
+		591E25652BFF31ED00375B33 /* UserDevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDevicesViewModel.swift; sourceTree = "<group>"; };
 		59F6A4442BF4878200442D17 /* Termosense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termosense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F6A4472BF4878200442D17 /* TermosenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermosenseApp.swift; sourceTree = "<group>"; };
 		59F6A44B2BF4878300442D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +111,7 @@
 		59F6A4462BF4878200442D17 /* Termosense */ = {
 			isa = PBXGroup;
 			children = (
+				591E255E2BFF136800375B33 /* Info.plist */,
 				59F6A4472BF4878200442D17 /* TermosenseApp.swift */,
 				59F6A4742BF48A1900442D17 /* Resources */,
 				59F6A4732BF48A1400442D17 /* ViewModel */,
@@ -149,6 +161,7 @@
 				59F6A4772BF48A4600442D17 /* LoginView.swift */,
 				59F6A4792BF48A4E00442D17 /* RegisterView.swift */,
 				59F6A47B2BF48A5C00442D17 /* HomeView.swift */,
+				591E25612BFF1B6500375B33 /* AddDeviceView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +169,10 @@
 		59F6A4732BF48A1400442D17 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				591E255C2BFF12B800375B33 /* LoginViewModel.swift */,
+				591E255F2BFF183300375B33 /* RegisterViewModel.swift */,
+				591E25632BFF2D3800375B33 /* AddDeviceViewModel.swift */,
+				591E25652BFF31ED00375B33 /* UserDevicesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -300,7 +317,12 @@
 			files = (
 				59F6A4782BF48A4600442D17 /* LoginView.swift in Sources */,
 				59F6A47A2BF48A4E00442D17 /* RegisterView.swift in Sources */,
+				591E25622BFF1B6500375B33 /* AddDeviceView.swift in Sources */,
+				591E25602BFF183300375B33 /* RegisterViewModel.swift in Sources */,
+				591E25642BFF2D3800375B33 /* AddDeviceViewModel.swift in Sources */,
+				591E255D2BFF12B800375B33 /* LoginViewModel.swift in Sources */,
 				59F6A4482BF4878200442D17 /* TermosenseApp.swift in Sources */,
+				591E25662BFF31ED00375B33 /* UserDevicesViewModel.swift in Sources */,
 				59F6A47C2BF48A5C00442D17 /* HomeView.swift in Sources */,
 				59F6A4762BF48A3A00442D17 /* WelcomeView.swift in Sources */,
 			);
@@ -469,6 +491,7 @@
 				DEVELOPMENT_TEAM = Z36G4RL54Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Termosense/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -498,6 +521,7 @@
 				DEVELOPMENT_TEAM = Z36G4RL54Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Termosense/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

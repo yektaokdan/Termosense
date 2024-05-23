@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var sensorData: SensorData = SensorData(id: 36, date: "2024-05-21T01:02:55", temperature: 26.7, humidity: 63, brightness: 1, flame: 0, motion: 1, mac: "50:02:91:ED:D0:20")
+    @StateObject private var userDevicesViewModel = UserDevicesViewModel()
 
     var body: some View {
         NavigationView {
@@ -26,8 +27,31 @@ struct HomeView: View {
                     .padding(.horizontal, 20)
 
                     Spacer()
+
                 }
             }
+            .navigationBarItems(trailing: NavigationLink(destination: AddDeviceView()) {
+                Image(systemName: "plus")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .foregroundColor(.white)
+            })
+        }
+        .navigationBarBackButtonHidden(true)
+        .onAppear {
+            if let token = UserDefaults.standard.string(forKey: "authToken") {
+                print("Stored Token: \(token)")
+                userDevicesViewModel.fetchUserDevices(token: token)
+            } else {
+                print("No token found")
+            }
+        }
+        .alert(item: $userDevicesViewModel.errorMessage) { errorMessage in
+            Alert(
+                title: Text("Error"),
+                message: Text(errorMessage.message),
+                dismissButton: .default(Text("OK"))
+            )
         }
     }
 }

@@ -5,15 +5,16 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var rememberPassword: Bool = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @StateObject private var authViewModel = LoginViewModel()
 
     var body: some View {
         NavigationView {
             ZStack {
                 Color("backBlue")
-                    .edgesIgnoringSafeArea(.all) // Arka plan rengini ayarlamak
+                    .edgesIgnoringSafeArea(.all)
 
                 VStack {
-                    Spacer() // Yukarıda boşluk bırakmak için Spacer ekliyoruz
+                    Spacer()
                     
                     Text("Sign In")
                         .font(.largeTitle)
@@ -29,6 +30,8 @@ struct LoginView: View {
                             .background(Color.white.opacity(0.1))
                             .cornerRadius(5)
                             .foregroundColor(Color.white)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
 
                         Text("Password")
                             .foregroundColor(Color.white)
@@ -37,6 +40,8 @@ struct LoginView: View {
                             .background(Color.white.opacity(0.1))
                             .cornerRadius(5)
                             .foregroundColor(Color.white)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
 
                         HStack {
                             Image(systemName: rememberPassword ? "checkmark.circle.fill" : "circle")
@@ -53,7 +58,8 @@ struct LoginView: View {
                     .padding(.bottom, 40)
 
                     Button(action: {
-                        // Button action goes here
+                        
+                        authViewModel.login(email: email, password: password)
                     }) {
                         Text("Sign In")
                             .fontWeight(.bold)
@@ -63,9 +69,9 @@ struct LoginView: View {
                             .foregroundColor(.white)
                             .cornerRadius(10)
                             .padding(.horizontal, 20)
-                            .shadow(color: Color.white.opacity(0.25), radius: 10, x: 0, y: 0) // Butonun etrafına ışık efekti eklemek için shadow ekliyoruz
+                            .shadow(color: Color.white.opacity(0.25), radius: 10, x: 0, y: 0)
                     }
-                    .padding(.bottom, 20) // Butonun en alt kısmı ekranın alt kısmına yaklaşması için padding ekliyoruz
+                    .padding(.bottom, 20)
 
                     HStack(spacing: 0) {
                         Text("Don't have an account? ")
@@ -91,6 +97,20 @@ struct LoginView: View {
                         presentationMode.wrappedValue.dismiss()
                     }
                 }
+                
+                NavigationLink(
+                    destination: HomeView(),
+                    isActive: $authViewModel.isAuthenticated
+                ) {
+                    EmptyView()
+                }
+            }
+            .alert(item: $authViewModel.errorMessage) { errorMessage in
+                Alert(
+                    title: Text("Error"),
+                    message: Text(errorMessage.message),
+                    dismissButton: .default(Text("OK"))
+                )
             }
         }
     }
