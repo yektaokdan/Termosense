@@ -10,7 +10,11 @@ struct SplashView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                if let sensorData = sensorDataViewModel.sensorData.first {
+                if sensorDataViewModel.isLoading {
+                    Text("Fetching Sensor Data...")
+                        .font(.system(size: 24, weight: .bold))
+                        .foregroundColor(Color.white)
+                } else if let sensorData = sensorDataViewModel.sensorData.first {
                     VStack(alignment: .leading, spacing: 20) {
                         Text("Sensor Data for Device: \(deviceMac)")
                             .font(.title)
@@ -29,9 +33,24 @@ struct SplashView: View {
                     .cornerRadius(15)
                     .shadow(radius: 10)
                 } else {
-                    Text("Fetching Sensor Data...")
-                        .font(.system(size: 24, weight: .bold))
-                        .foregroundColor(Color.white)
+                    VStack {
+                        Text("No Sensor Data Available")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundColor(Color.white)
+
+                        Button(action: {
+                            if let token = UserDefaults.standard.string(forKey: "authToken") {
+                                sensorDataViewModel.fetchSensorData(token: token, deviceMac: deviceMac)
+                            }
+                        }) {
+                            Text("Retry")
+                                .font(.system(size: 20, weight: .bold))
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(10)
+                        }
+                    }
                 }
             }
         }
@@ -47,33 +66,5 @@ struct SplashView: View {
                 dismissButton: .default(Text("OK"))
             )
         }
-    }
-}
-
-struct SensorDataRow: View {
-    var icon: String
-    var label: String
-    var value: String
-
-    var body: some View {
-        HStack {
-            Image(systemName: icon)
-                .foregroundColor(.white)
-                .frame(width: 40, height: 40)
-            VStack(alignment: .leading) {
-                Text(label)
-                    .font(.headline)
-                    .foregroundColor(.white)
-                Text(value)
-                    .font(.subheadline)
-                    .foregroundColor(.white)
-            }
-        }
-    }
-}
-
-struct SplashView_Previews: PreviewProvider {
-    static var previews: some View {
-        SplashView(sensorDataViewModel: SensorDataViewModel(), deviceMac: "52:02:91:ED:D0:20")
     }
 }

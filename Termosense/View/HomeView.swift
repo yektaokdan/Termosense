@@ -4,7 +4,11 @@ struct HomeView: View {
     @StateObject private var userDevicesViewModel = UserDevicesViewModel()
     @State private var isSplashViewPresented = false
     @State private var isAddDeviceViewPresented = false
-    @State private var selectedDeviceMac = ""
+    @State private var selectedDeviceMac = "" {
+        didSet {
+            print("Selected Device MAC: \(selectedDeviceMac)")
+        }
+    }
     @StateObject private var sensorDataViewModel = SensorDataViewModel()
 
     var body: some View {
@@ -76,53 +80,10 @@ struct HomeView: View {
                 dismissButton: .default(Text("OK"))
             )
         }
-    }
-}
-
-struct DeviceRow: View {
-    var device: Device
-    var onTap: () -> Void
-
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(device.name)
-                    .font(.system(size: 18, weight: .semibold, design: .rounded))
-                    .foregroundColor(Color.white)
-                
-                Text(device.mac)
-                    .font(.system(size: 14, weight: .regular, design: .rounded))
-                    .foregroundColor(Color.white)
+        .onChange(of: selectedDeviceMac) { newValue in
+            if let token = UserDefaults.standard.string(forKey: "authToken") {
+                sensorDataViewModel.fetchSensorData(token: token, deviceMac: newValue)
             }
-            Spacer()
-            Image(systemName: "chevron.right")
-                .foregroundColor(Color.white)
         }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 15)
-                .fill(Color("backGreen").opacity(0.8))
-                .shadow(color: Color("backGreen").opacity(0.4), radius: 10, x: 0, y: 5)
-        )
-        .onTapGesture {
-            onTap()
-        }
-    }
-}
-
-struct SensorData1: Identifiable {
-    var id: Int
-    var date: String
-    var temperature: Double
-    var humidity: Int
-    var brightness: Int
-    var flame: Int
-    var motion: Int
-    var mac: String
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
     }
 }

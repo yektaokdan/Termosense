@@ -1,18 +1,18 @@
-//
-//  SensorDataViewModel.swift
-//  Termosense
-//
-//  Created by trc vpn on 23.05.2024.
-//
 import Foundation
 import Combine
 
 class SensorDataViewModel: ObservableObject {
     @Published var sensorData: [SensorData] = []
     @Published var errorMessage: ErrorMessage?
+    @Published var isLoading: Bool = false
 
     func fetchSensorData(token: String, deviceMac: String) {
-        guard let url = URL(string: "http://154.53.180.108:8080/api/sensordata") else { return }
+        guard let url = URL(string: "http://154.53.180.108:8080/api/sensordata") else {
+            DispatchQueue.main.async {
+                self.errorMessage = ErrorMessage(message: "Invalid URL")
+            }
+            return
+        }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -21,7 +21,21 @@ class SensorDataViewModel: ObservableObject {
         let body: [String: Any] = ["token": token, "deviceMac": deviceMac]
         request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
 
+        // JSON verisini günlüğe kaydetme
+        if let jsonData = try? JSONSerialization.data(withJSONObject: body, options: []),
+           let jsonString = String(data: jsonData, encoding: .utf8) {
+            print("HTTP Body: \(jsonString)")
+        }
+
+        DispatchQueue.main.async {
+            self.isLoading = true
+        }
+
         URLSession.shared.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
+
             guard let data = data, error == nil else {
                 DispatchQueue.main.async {
                     self.errorMessage = ErrorMessage(message: error?.localizedDescription ?? "Unknown error")
@@ -29,60 +43,31 @@ class SensorDataViewModel: ObservableObject {
                 return
             }
 
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-                if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                   let status = json["status"] as? String, status == "true",
-                   let sensorDataArray = json[deviceMac] as? [[String: Any]] {
-                    DispatchQueue.main.async {
-                        self.sensorData = sensorDataArray.compactMap { SensorData(dictionary: $0) }
-                        print("Sensor Data: \(self.sensorData)")
+            if let httpResponse = response as? HTTPURLResponse {
+                print("HTTP Response Status Code: \(httpResponse.statusCode)")
+                if httpResponse.statusCode == 200 {
+                    if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                       let status = json["status"] as? String, status == "true",
+                       let sensorDataArray = json[deviceMac] as? [[String: Any]] {
+                        DispatchQueue.main.async {
+                            self.sensorData = sensorDataArray.compactMap { SensorData(dictionary: $0) }
+                            print("Sensor Data: \(self.sensorData)")
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self.errorMessage = ErrorMessage(message: "Failed to parse sensor data")
+                        }
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.errorMessage = ErrorMessage(message: "Failed to fetch sensor data")
+                        self.errorMessage = ErrorMessage(message: "HTTP Error: \(httpResponse.statusCode)")
                     }
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.errorMessage = ErrorMessage(message: "Failed to fetch sensor data")
+                    self.errorMessage = ErrorMessage(message: "Unknown response error")
                 }
             }
         }.resume()
     }
 }
-
-
-
-struct SensorData: Identifiable {
-    var id: Int
-    var date: String
-    var temperature: Double
-    var humidity: Int
-    var brightness: Int
-    var flame: Int
-    var motion: Int
-    var mac: String
-
-    init?(dictionary: [String: Any]) {
-        guard let id = dictionary["id"] as? Int,
-              let date = dictionary["date"] as? String,
-              let temperature = dictionary["temperature"] as? Double,
-              let humidity = dictionary["humidity"] as? Int,
-              let brightness = dictionary["brightness"] as? Int,
-              let flame = dictionary["flame"] as? Int,
-              let motion = dictionary["motion"] as? Int,
-              let mac = dictionary["mac"] as? String else {
-            return nil
-        }
-        self.id = id
-        self.date = date
-        self.temperature = temperature
-        self.humidity = humidity
-        self.brightness = brightness
-        self.flame = flame
-        self.motion = motion
-        self.mac = mac
-    }
-}
-
-

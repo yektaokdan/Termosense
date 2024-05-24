@@ -14,6 +14,12 @@
 		591E25662BFF31ED00375B33 /* UserDevicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591E25652BFF31ED00375B33 /* UserDevicesViewModel.swift */; };
 		59526A782BFF754900550E2E /* SensorDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59526A772BFF754900550E2E /* SensorDataViewModel.swift */; };
 		59526A7A2BFF75B200550E2E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59526A792BFF75B200550E2E /* SplashView.swift */; };
+		59B22CF22C0064DA0000C3E2 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B22CF12C0064DA0000C3E2 /* ErrorMessage.swift */; };
+		59B22CF42C0064F40000C3E2 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B22CF32C0064F40000C3E2 /* Device.swift */; };
+		59B22CF62C0065120000C3E2 /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B22CF52C0065120000C3E2 /* SensorData.swift */; };
+		59B22CF82C0065E30000C3E2 /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B22CF72C0065E30000C3E2 /* DeviceRow.swift */; };
+		59B22CFA2C0066250000C3E2 /* SensorDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B22CF92C0066250000C3E2 /* SensorDataRow.swift */; };
+		59B22CFD2C00668A0000C3E2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B22CFC2C00668A0000C3E2 /* APIService.swift */; };
 		59F6A4482BF4878200442D17 /* TermosenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A4472BF4878200442D17 /* TermosenseApp.swift */; };
 		59F6A44C2BF4878300442D17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F6A44B2BF4878300442D17 /* Assets.xcassets */; };
 		59F6A44F2BF4878300442D17 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F6A44E2BF4878300442D17 /* Preview Assets.xcassets */; };
@@ -52,6 +58,12 @@
 		591E25652BFF31ED00375B33 /* UserDevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDevicesViewModel.swift; sourceTree = "<group>"; };
 		59526A772BFF754900550E2E /* SensorDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataViewModel.swift; sourceTree = "<group>"; };
 		59526A792BFF75B200550E2E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		59B22CF12C0064DA0000C3E2 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		59B22CF32C0064F40000C3E2 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		59B22CF52C0065120000C3E2 /* SensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
+		59B22CF72C0065E30000C3E2 /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
+		59B22CF92C0066250000C3E2 /* SensorDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataRow.swift; sourceTree = "<group>"; };
+		59B22CFC2C00668A0000C3E2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		59F6A4442BF4878200442D17 /* Termosense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termosense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F6A4472BF4878200442D17 /* TermosenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermosenseApp.swift; sourceTree = "<group>"; };
 		59F6A44B2BF4878300442D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59B22CFB2C0066520000C3E2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				59B22CFC2C00668A0000C3E2 /* APIService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		59F6A43B2BF4878200442D17 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +141,7 @@
 				59F6A4732BF48A1400442D17 /* ViewModel */,
 				59F6A4722BF48A1000442D17 /* View */,
 				59F6A4712BF48A0C00442D17 /* Model */,
+				59B22CFB2C0066520000C3E2 /* Service */,
 				59F6A44D2BF4878300442D17 /* Preview Content */,
 			);
 			path = Termosense;
@@ -154,6 +175,9 @@
 		59F6A4712BF48A0C00442D17 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				59B22CF12C0064DA0000C3E2 /* ErrorMessage.swift */,
+				59B22CF32C0064F40000C3E2 /* Device.swift */,
+				59B22CF52C0065120000C3E2 /* SensorData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,6 +191,8 @@
 				59F6A47B2BF48A5C00442D17 /* HomeView.swift */,
 				591E25612BFF1B6500375B33 /* AddDeviceView.swift */,
 				59526A792BFF75B200550E2E /* SplashView.swift */,
+				59B22CF72C0065E30000C3E2 /* DeviceRow.swift */,
+				59B22CF92C0066250000C3E2 /* SensorDataRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,16 +349,22 @@
 			files = (
 				59F6A4782BF48A4600442D17 /* LoginView.swift in Sources */,
 				59F6A47A2BF48A4E00442D17 /* RegisterView.swift in Sources */,
+				59B22CF82C0065E30000C3E2 /* DeviceRow.swift in Sources */,
 				591E25622BFF1B6500375B33 /* AddDeviceView.swift in Sources */,
 				591E25602BFF183300375B33 /* RegisterViewModel.swift in Sources */,
 				59526A782BFF754900550E2E /* SensorDataViewModel.swift in Sources */,
+				59B22CF42C0064F40000C3E2 /* Device.swift in Sources */,
 				59526A7A2BFF75B200550E2E /* SplashView.swift in Sources */,
+				59B22CF22C0064DA0000C3E2 /* ErrorMessage.swift in Sources */,
+				59B22CF62C0065120000C3E2 /* SensorData.swift in Sources */,
 				591E25642BFF2D3800375B33 /* AddDeviceViewModel.swift in Sources */,
 				591E255D2BFF12B800375B33 /* LoginViewModel.swift in Sources */,
 				59F6A4482BF4878200442D17 /* TermosenseApp.swift in Sources */,
 				591E25662BFF31ED00375B33 /* UserDevicesViewModel.swift in Sources */,
 				59F6A47C2BF48A5C00442D17 /* HomeView.swift in Sources */,
 				59F6A4762BF48A3A00442D17 /* WelcomeView.swift in Sources */,
+				59B22CFD2C00668A0000C3E2 /* APIService.swift in Sources */,
+				59B22CFA2C0066250000C3E2 /* SensorDataRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

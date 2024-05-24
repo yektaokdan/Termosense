@@ -1,7 +1,14 @@
+//
+//  APIService.swift
+//  Termosense
+//
+//  Created by trc vpn on 24.05.2024.
+//
+
 import Foundation
 import Combine
 
-class LoginViewModel: ObservableObject {
+class APIService: ObservableObject {
     @Published var isAuthenticated: Bool = false
     @Published var errorMessage: ErrorMessage?
 
@@ -41,4 +48,3 @@ class LoginViewModel: ObservableObject {
         }.resume()
     }
 }
-
