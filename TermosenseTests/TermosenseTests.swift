@@ -1,9 +1,3 @@
-//
-//  TermosenseTests.swift
-//  TermosenseTests
-//
-//  Created by trc vpn on 15.05.2024.
-//
 
 import XCTest
 @testable import Termosense

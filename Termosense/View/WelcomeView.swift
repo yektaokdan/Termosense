@@ -5,21 +5,21 @@ struct WelcomeView: View {
         NavigationView {
             ZStack {
                 Color("backGreen")
-                    .edgesIgnoringSafeArea(.all) // Arka plan rengini ayarlamak
+                    .edgesIgnoringSafeArea(.all)
 
                 VStack {
-                    Spacer() // Yukarıda boşluk bırakmak için Spacer ekliyoruz
+                    Spacer()
 
                     Image("maviLogo")
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 33.5) // İsteğe bağlı olarak görüntü yüksekliğini ayarlayabilirsiniz
+                        .frame(height: 33.5)
                         .padding(.bottom, 10)
                     Spacer()
                     Image("termosense")
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 250) // İsteğe bağlı olarak görüntü yüksekliğini ayarlayabilirsiniz
+                        .frame(height: 250)
                         .padding(.bottom, 20)
 
                     HStack {
@@ -45,7 +45,7 @@ struct WelcomeView: View {
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 20)
                     
-                    Spacer() // Ortadaki içerik için boşluk bırakmak için Spacer ekliyoruz
+                    Spacer()
 
                     NavigationLink(destination: LoginView().navigationBarBackButtonHidden(true)) {
                         Text("Continue")
@@ -57,7 +57,7 @@ struct WelcomeView: View {
                             .cornerRadius(10)
                             .padding(.horizontal, 20)
                     }
-                    .padding(.bottom, 30) // Butonun en alt kısmı ekranın alt kısmına yaklaşması için padding ekliyoruz
+                    .padding(.bottom, 30)
                 }
                 .padding()
             }

@@ -22,6 +22,6 @@ struct SensorData {
         self.brightness = brightness
         self.flame = flame
         self.motion = motion
-        self.date = String(date.prefix(10)) // Tarih bilgisinin ilk 10 hanesi alınır
+        self.date = String(date.prefix(10))
     }
 }

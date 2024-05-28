@@ -11,7 +11,7 @@ struct AddDeviceView: View {
     var body: some View {
         ZStack{
             Color("backBlue")
-                .edgesIgnoringSafeArea(.all) // Arka plan rengini ayarlamak
+                .edgesIgnoringSafeArea(.all)
 
             VStack(alignment: .leading, spacing: 15) {
                 Image("logo")
@@ -19,33 +19,33 @@ struct AddDeviceView: View {
                     .foregroundColor(Color.white)
                     .font(.headline)
                     .padding(.horizontal, 20)
-                    .padding(.top, 10) // Üst kısımdan biraz boşluk ekleyelim
+                    .padding(.top, 10)
                     .scaledToFit()
-                    .frame(height: 250) // İsteğe bağlı olarak görüntü yüksekliğini ayarlayabilirsiniz
+                    .frame(height: 250)
                 
                 Text("Device Alias")
                     .foregroundColor(Color.white)
-                    .padding(.horizontal, 20) // Sağdan ve soldan padding ekliyoruz
+                    .padding(.horizontal, 20)
                 TextField("Enter device alias", text: $alias)
                     .padding()
                     .background(Color.white.opacity(0.1))
                     .cornerRadius(5)
                     .foregroundColor(Color.white)
-                    .autocapitalization(.none) // Otomatik büyük harfle başlamayı engellemek için
+                    .autocapitalization(.none)
                     .disableAutocorrection(true)
-                    .padding(.horizontal, 20) // Sağdan ve soldan padding ekliyoruz
+                    .padding(.horizontal, 20)
 
                 Text("MAC Address")
                     .foregroundColor(Color.white)
-                    .padding(.horizontal, 20) // Sağdan ve soldan padding ekliyoruz
+                    .padding(.horizontal, 20)
                 TextField("AA:22:11:BB:44:20", text: $macAddress)
                     .padding()
                     .background(Color.white.opacity(0.1))
                     .cornerRadius(5)
                     .foregroundColor(Color.white)
-                    .autocapitalization(.none) // Otomatik büyük harfle başlamayı engellemek için
+                    .autocapitalization(.none)
                     .disableAutocorrection(true)
-                    .padding(.horizontal, 20) // Sağdan ve soldan padding ekliyoruz
+                    .padding(.horizontal, 20)
                 Button(action: {
                     if let token = UserDefaults.standard.string(forKey: "authToken") {
                         addDeviceViewModel.onDeviceAdded = {
@@ -63,9 +63,9 @@ struct AddDeviceView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                         .padding(.horizontal, 20)
-                        .shadow(color: Color.white.opacity(0.25), radius: 10, x: 0, y: 0) // Butonun etrafına ışık efekti eklemek için shadow ekliyoruz
+                        .shadow(color: Color.white.opacity(0.25), radius: 10, x: 0, y: 0)
                 }
-                .padding(.bottom, 20) // Butonun en alt kısmı ekranın alt kısmına yaklaşması için padding ekliyoruz
+                .padding(.bottom, 20)
             }
         }
         .alert(isPresented: $addDeviceViewModel.isDeviceAdded) {

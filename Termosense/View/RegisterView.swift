@@ -14,7 +14,7 @@ struct RegisterView: View {
         NavigationView{
             ZStack {
                 Color("backBlue")
-                    .edgesIgnoringSafeArea(.all) // Arka plan rengini ayarlamak
+                    .edgesIgnoringSafeArea(.all)
 
                 VStack {
                     Text("Sign Up")
@@ -52,7 +52,7 @@ struct RegisterView: View {
                             .background(Color.white.opacity(0.1))
                             .cornerRadius(5)
                             .foregroundColor(Color.white)
-                            .autocapitalization(.none) // Otomatik büyük harfle başlamayı engellemek için
+                            .autocapitalization(.none)
                             .disableAutocorrection(true)
 
                         Text("Password")
@@ -62,7 +62,7 @@ struct RegisterView: View {
                             .background(Color.white.opacity(0.1))
                             .cornerRadius(5)
                             .foregroundColor(Color.white)
-                            .autocapitalization(.none) // Otomatik büyük harfle başlamayı engellemek için
+                            .autocapitalization(.none)
                             .disableAutocorrection(true)
 
                         Text("Confirm Password")
@@ -72,7 +72,7 @@ struct RegisterView: View {
                             .background(Color.white.opacity(0.1))
                             .cornerRadius(5)
                             .foregroundColor(Color.white)
-                            .autocapitalization(.none) // Otomatik büyük harfle başlamayı engellemek için
+                            .autocapitalization(.none)
                             .disableAutocorrection(true)
                     }
                     .padding(.horizontal, 20)
@@ -93,9 +93,9 @@ struct RegisterView: View {
                             .foregroundColor(.white)
                             .cornerRadius(10)
                             .padding(.horizontal, 20)
-                            .shadow(color: Color.white.opacity(0.25), radius: 10, x: 0, y: 0) // Butonun etrafına ışık efekti eklemek için shadow ekliyoruz
+                            .shadow(color: Color.white.opacity(0.25), radius: 10, x: 0, y: 0)
                     }
-                    .padding(.bottom, 20) // Butonun en alt kısmı ekranın alt kısmına yaklaşması için padding ekliyoruz
+                    .padding(.bottom, 20)
                 }
                 .alert(item: $registerViewModel.errorMessage) { errorMessage in
                     Alert(
@@ -105,8 +105,8 @@ struct RegisterView: View {
                     )
                 }
             }
-            .navigationBarHidden(true) // Navigasyon barını tamamen gizlemek için ekliyoruz
-            .navigationBarBackButtonHidden(true) // Geri butonunu gizlemek için ekliyoruz
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
             .onChange(of: registerViewModel.registrationSuccessful) { success in
                 if success {
                     presentationMode.wrappedValue.dismiss()

@@ -1,9 +1,3 @@
-//
-//  SensorDataRow.swift
-//  Termosense
-//
-//  Created by trc vpn on 24.05.2024.
-//
 
 import SwiftUI
 struct SensorDataRow: View {

@@ -1,9 +1,4 @@
-//
-//  TermosenseApp.swift
-//  Termosense
-//
-//  Created by trc vpn on 15.05.2024.
-//
+
 
 import SwiftUI
 

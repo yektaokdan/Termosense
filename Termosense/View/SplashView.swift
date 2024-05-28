@@ -11,7 +11,7 @@ struct SplashView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 30) {
-                VStack(alignment: .center, spacing: 10) { // Merkezleme için alignment değiştirildi
+                VStack(alignment: .center, spacing: 10) { 
                     Text("Selected Device")
                         .font(.headline)
                         .foregroundColor(.white)
@@ -26,7 +26,7 @@ struct SplashView: View {
                         .foregroundColor(.white.opacity(0.7))
                 }
                 .padding()
-                .frame(maxWidth: .infinity) // Kartı genişletmek için eklendi
+                .frame(maxWidth: .infinity)
                 .background(Color.white.opacity(0.2))
                 .cornerRadius(15)
                 .shadow(radius: 10)
@@ -47,8 +47,8 @@ struct SplashView: View {
                         SensorDataCard(icon: "calendar", label: "Date", value: sensorDataViewModel.sensorData.first?.date ?? "")
                     }
                 }
-                .padding(.horizontal, 10) // Yan padding eklendi
-                .padding(.vertical, 20) // Dikey padding düzenlendi
+                .padding(.horizontal, 10)
+                .padding(.vertical, 20)
                 .background(Color.white.opacity(0.2))
                 .cornerRadius(15)
                 .shadow(radius: 10)
@@ -84,7 +84,7 @@ struct SensorDataCard: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20, height: 20)
-                    .foregroundColor(Color("backGreen")) // Adjust color if necessary
+                    .foregroundColor(Color("backGreen"))
                 Text(label)
                     .font(.subheadline)
                     .foregroundColor(.white)
