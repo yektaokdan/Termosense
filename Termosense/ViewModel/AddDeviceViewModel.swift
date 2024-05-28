@@ -7,7 +7,7 @@ class AddDeviceViewModel: ObservableObject {
     var onDeviceAdded: (() -> Void)?
 
     func addDevice(token: String, deviceName: String, deviceMac: String) {
-        guard let url = URL(string: "http://154.53.180.108:8080/api/addDevice") else { return }
+        guard let url = URL(string: "\(Constants.baseURL)/addDevice") else { return }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

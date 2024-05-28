@@ -25,23 +25,39 @@ struct LoginView: View {
                     VStack(alignment: .leading, spacing: 15) {
                         Text("Email address")
                             .foregroundColor(Color.white)
-                        TextField("demoattermosense.com", text: $email)
-                            .padding()
-                            .background(Color.white.opacity(0.1))
-                            .cornerRadius(5)
-                            .foregroundColor(Color.white)
-                            .autocapitalization(.none)
-                            .disableAutocorrection(true)
+                        
+                        ZStack(alignment: .leading) {
+                            if email.isEmpty {
+                                Text("demoattermosense.com")
+                                    .foregroundColor(Color.white.opacity(0.5))
+                                    .padding(.horizontal, 15)
+                            }
+                            TextField("", text: $email)
+                                .padding()
+                                .background(Color.white.opacity(0.1))
+                                .cornerRadius(5)
+                                .foregroundColor(Color.white)
+                                .autocapitalization(.none)
+                                .disableAutocorrection(true)
+                        }
 
                         Text("Password")
                             .foregroundColor(Color.white)
-                        SecureField("•••••••••••", text: $password)
-                            .padding()
-                            .background(Color.white.opacity(0.1))
-                            .cornerRadius(5)
-                            .foregroundColor(Color.white)
-                            .autocapitalization(.none)
-                            .disableAutocorrection(true)
+                        
+                        ZStack(alignment: .leading) {
+                            if password.isEmpty {
+                                Text("•••••••••••")
+                                    .foregroundColor(Color.white.opacity(0.5))
+                                    .padding(.horizontal, 15)
+                            }
+                            SecureField("", text: $password)
+                                .padding()
+                                .background(Color.white.opacity(0.1))
+                                .cornerRadius(5)
+                                .foregroundColor(Color.white)
+                                .autocapitalization(.none)
+                                .disableAutocorrection(true)
+                        }
 
                         HStack {
                             Image(systemName: rememberPassword ? "checkmark.circle.fill" : "circle")
@@ -58,7 +74,6 @@ struct LoginView: View {
                     .padding(.bottom, 40)
 
                     Button(action: {
-                        
                         authViewModel.login(email: email, password: password)
                     }) {
                         Text("Sign In")

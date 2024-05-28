@@ -6,7 +6,7 @@ class LoginViewModel: ObservableObject {
     @Published var errorMessage: ErrorMessage?
 
     func login(email: String, password: String) {
-        guard let url = URL(string: "http://154.53.180.108:8080/api/login") else { return }
+        guard let url = URL(string: "\(Constants.baseURL)/login") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

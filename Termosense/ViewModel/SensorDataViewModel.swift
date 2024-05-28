@@ -7,7 +7,7 @@ class SensorDataViewModel: ObservableObject {
     @Published var isLoading: Bool = false
 
     func fetchSensorData(token: String, deviceMac: String) {
-        guard let url = URL(string: "http://154.53.180.108:8080/api/sensordata") else {
+        guard let url = URL(string: "\(Constants.baseURL)/sensordata") else {
             DispatchQueue.main.async {
                 self.errorMessage = ErrorMessage(message: "Invalid URL")
             }
@@ -20,12 +20,6 @@ class SensorDataViewModel: ObservableObject {
 
         let body: [String: Any] = ["token": token, "deviceMac": deviceMac]
         request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-
-        // JSON verisini günlüğe kaydetme
-        if let jsonData = try? JSONSerialization.data(withJSONObject: body, options: []),
-           let jsonString = String(data: jsonData, encoding: .utf8) {
-            print("HTTP Body: \(jsonString)")
-        }
 
         DispatchQueue.main.async {
             self.isLoading = true
@@ -44,14 +38,12 @@ class SensorDataViewModel: ObservableObject {
             }
 
             if let httpResponse = response as? HTTPURLResponse {
-                print("HTTP Response Status Code: \(httpResponse.statusCode)")
                 if httpResponse.statusCode == 200 {
                     if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                        let status = json["status"] as? String, status == "true",
                        let sensorDataArray = json[deviceMac] as? [[String: Any]] {
                         DispatchQueue.main.async {
                             self.sensorData = sensorDataArray.compactMap { SensorData(dictionary: $0) }
-                            print("Sensor Data: \(self.sensorData)")
                         }
                     } else {
                         DispatchQueue.main.async {
@@ -71,3 +63,5 @@ class SensorDataViewModel: ObservableObject {
         }.resume()
     }
 }
+
+

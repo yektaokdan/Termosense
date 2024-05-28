@@ -1,14 +1,9 @@
-//
-//  DeviceRow.swift
-//  Termosense
-//
-//  Created by trc vpn on 24.05.2024.
-//
-
 import SwiftUI
+
 struct DeviceRow: View {
     var device: Device
     var onTap: () -> Void
+    var onDelete: () -> Void
 
     var body: some View {
         HStack {
@@ -34,6 +29,12 @@ struct DeviceRow: View {
         .onTapGesture {
             onTap()
         }
+        .swipeActions {
+            Button(role: .destructive) {
+                onDelete()
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
+        }
     }
 }
-

@@ -6,7 +6,7 @@ class RegisterViewModel: ObservableObject {
     @Published var errorMessage: ErrorMessage?
 
     func register(firstname: String, lastname: String, email: String, password: String) {
-        guard let url = URL(string: "http://154.53.180.108:8080/api/register") else { return }
+        guard let url = URL(string: "\(Constants.baseURL)/register") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

@@ -9,7 +9,14 @@ struct HomeView: View {
             print("Selected Device MAC: \(selectedDeviceMac)")
         }
     }
+    @State private var selectedDeviceName = "" {
+        didSet {
+            print("Selected Device Name: \(selectedDeviceName)")
+        }
+    }
     @StateObject private var sensorDataViewModel = SensorDataViewModel()
+    @State private var isDeleteConfirmationPresented = false
+    @State private var deviceToDelete: Device?
 
     var body: some View {
         NavigationView {
@@ -29,17 +36,20 @@ struct HomeView: View {
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(Color.white)
                     } else {
-                        ScrollView {
-                            VStack(spacing: 20) {
-                                ForEach(userDevicesViewModel.devices) { device in
-                                    DeviceRow(device: device) {
-                                        selectedDeviceMac = device.mac
-                                        isSplashViewPresented.toggle()
-                                    }
+                        List {
+                            ForEach(userDevicesViewModel.devices) { device in
+                                DeviceRow(device: device) {
+                                    selectedDeviceMac = device.mac
+                                    selectedDeviceName = device.name
+                                    isSplashViewPresented.toggle()
+                                } onDelete: {
+                                    deviceToDelete = device
+                                    isDeleteConfirmationPresented.toggle()
                                 }
                             }
-                            .padding(.horizontal, 20)
+                            .listRowBackground(Color.clear)
                         }
+                        .listStyle(PlainListStyle())
                     }
 
                     Spacer()
@@ -61,7 +71,19 @@ struct HomeView: View {
                 })
             }
             .sheet(isPresented: $isSplashViewPresented) {
-                SplashView(sensorDataViewModel: sensorDataViewModel, deviceMac: selectedDeviceMac)
+                SplashView(sensorDataViewModel: sensorDataViewModel, deviceName: selectedDeviceName, deviceMac: selectedDeviceMac)
+            }
+            .alert(isPresented: $isDeleteConfirmationPresented) {
+                Alert(
+                    title: Text("Confirm Deletion"),
+                    message: Text("Are you sure you want to delete this device?"),
+                    primaryButton: .destructive(Text("Delete")) {
+                        if let device = deviceToDelete, let token = UserDefaults.standard.string(forKey: "authToken") {
+                            userDevicesViewModel.deleteDevice(token: token, deviceMac: device.mac)
+                        }
+                    },
+                    secondaryButton: .cancel()
+                )
             }
         }
         .navigationBarBackButtonHidden(true)
