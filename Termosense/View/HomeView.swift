@@ -32,9 +32,17 @@ struct HomeView: View {
                         .padding(.bottom, 20)
 
                     if userDevicesViewModel.noDevices {
-                        Text("Please add a device")
-                            .font(.system(size: 24, weight: .bold))
-                            .foregroundColor(Color.white)
+                        VStack(spacing: 20) {
+                            Image("add")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 300, height: 300)
+                                .padding(20)
+                            Text("Please add a device")
+                                .font(.system(size: 24, weight: .bold))
+                                .foregroundColor(Color.white)
+                               
+                        }
                     } else {
                         List {
                             ForEach(userDevicesViewModel.devices) { device in
