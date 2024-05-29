@@ -14,7 +14,7 @@ struct AddDeviceView: View {
                 .edgesIgnoringSafeArea(.all)
 
             VStack(alignment: .leading, spacing: 15) {
-                Image("logo")
+                Image("maviLogo")
                     .resizable()
                     .foregroundColor(Color.white)
                     .font(.headline)
