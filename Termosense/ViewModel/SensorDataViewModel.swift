@@ -63,5 +63,3 @@ class SensorDataViewModel: ObservableObject {
         }.resume()
     }
 }
-
-

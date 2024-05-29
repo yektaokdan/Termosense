@@ -25,12 +25,11 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
 
                 VStack {
-                    Text("Termosense")
-                        .font(.system(size: 34, weight: .bold, design: .rounded))
-                        .foregroundColor(Color.white)
-                        .padding(.top, 40)
-                        .padding(.bottom, 20)
-
+                    Image("yesilLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                    
                     if userDevicesViewModel.noDevices {
                         VStack(spacing: 20) {
                             Image("add")
@@ -41,7 +40,6 @@ struct HomeView: View {
                             Text("Please add a device")
                                 .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(Color.white)
-                               
                         }
                     } else {
                         List {

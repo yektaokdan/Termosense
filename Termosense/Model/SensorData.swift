@@ -8,20 +8,12 @@ struct SensorData {
     var motion: Int
     var date: String
 
-    init?(dictionary: [String: Any]) {
-        guard let temperature = dictionary["temperature"] as? Double,
-              let humidity = dictionary["humidity"] as? Double,
-              let brightness = dictionary["brightness"] as? Int,
-              let flame = dictionary["flame"] as? Int,
-              let motion = dictionary["motion"] as? Int,
-              let date = dictionary["date"] as? String else {
-            return nil
-        }
-        self.temperature = round(temperature * 100) / 100.0
-        self.humidity = round(humidity * 100) / 100.0
-        self.brightness = brightness
-        self.flame = flame
-        self.motion = motion
-        self.date = String(date.prefix(10))
+    init(dictionary: [String: Any]) {
+        self.temperature = round((dictionary["temperature"] as? Double ?? 0.0) * 100) / 100.0
+        self.humidity = round((dictionary["humidity"] as? Double ?? 0.0) * 100) / 100.0
+        self.brightness = dictionary["brightness"] as? Int ?? 0
+        self.flame = dictionary["flame"] as? Int ?? 0
+        self.motion = dictionary["motion"] as? Int ?? 0
+        self.date = (dictionary["date"] as? String)?.prefix(10).description ?? "N/A"
     }
 }

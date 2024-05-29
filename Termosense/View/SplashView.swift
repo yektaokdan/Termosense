@@ -4,6 +4,8 @@ struct SplashView: View {
     @ObservedObject var sensorDataViewModel: SensorDataViewModel
     var deviceName: String
     var deviceMac: String
+    
+    @State private var isAlertPresented = false
 
     var body: some View {
         ZStack {
@@ -11,7 +13,7 @@ struct SplashView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 30) {
-                VStack(alignment: .center, spacing: 10) { 
+                VStack(alignment: .center, spacing: 10) {
                     Text("Selected Device")
                         .font(.headline)
                         .foregroundColor(.white)
@@ -44,7 +46,7 @@ struct SplashView: View {
                     }
                     HStack(spacing: 20) {
                         SensorDataCard(icon: "figure.walk", label: "Motion", value: sensorDataViewModel.sensorData.first?.motion == 1 ? "Detected" : "Not Detected")
-                        SensorDataCard(icon: "calendar", label: "Date", value: sensorDataViewModel.sensorData.first?.date ?? "")
+                        SensorDataCard(icon: "calendar", label: "Date", value: sensorDataViewModel.sensorData.first?.date ?? "N/A")
                     }
                 }
                 .padding(.horizontal, 10)
@@ -62,12 +64,17 @@ struct SplashView: View {
                 sensorDataViewModel.fetchSensorData(token: token, deviceMac: deviceMac)
             }
         }
-        .alert(item: $sensorDataViewModel.errorMessage) { errorMessage in
+        .alert(isPresented: $isAlertPresented) {
             Alert(
                 title: Text("Error"),
-                message: Text(errorMessage.message),
+                message: Text(sensorDataViewModel.errorMessage?.message ?? "Unknown error"),
                 dismissButton: .default(Text("OK"))
             )
+        }
+        .onChange(of: sensorDataViewModel.errorMessage) { _ in
+            if sensorDataViewModel.errorMessage != nil {
+                isAlertPresented = true
+            }
         }
     }
 }
